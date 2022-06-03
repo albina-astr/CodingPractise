@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/
  *
- * @author Albina Gimaletdinova on 28/02/2023
+ * @author Albina Gimaletdinova on 03/06/2022
  */
 public class WordsFormedFromCharacters {
     public int countCharacters(String[] words, String chars) {
