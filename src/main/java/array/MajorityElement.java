@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * https://leetcode.com/problems/majority-element/
  *
- * @author Albina Gimaletdinova on 02/03/2022
+ * @author Albina Gimaletdinova on 08/06/2022
  */
 public class MajorityElement {
     // solution 1
