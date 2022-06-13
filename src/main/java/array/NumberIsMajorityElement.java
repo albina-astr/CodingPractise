@@ -9,6 +9,7 @@ import java.util.Map;
  * @author Albina Gimaletdinova on 12/06/2022
  */
 public class NumberIsMajorityElement {
+    //solution 1 with HashMap
     public boolean isMajorityElement(int[] arr, int target) {
         Map<Integer, Integer> dict = new HashMap<>();
         for (int n : arr) {
@@ -20,5 +21,22 @@ public class NumberIsMajorityElement {
         Integer targetCount = dict.get(target);
         if (targetCount == null) return false;
         return targetCount > arr.length / 2;
+    }
+
+    //solution 2 with Binary Search
+    public boolean isMajorityElement2(int[] arr, int target) {
+        int first = binSearch(arr, target);
+        int last = binSearch(arr, target + 1);
+        return last - first > arr.length / 2;
+    }
+
+    private int binSearch(int[] arr, int key) {
+        int lo = 0, hi = arr.length;
+        while (lo < hi) {
+            int mid = lo + (hi - lo) / 2;
+            if (key > arr[mid]) lo = mid + 1;
+            else hi = mid;
+        }
+        return lo;
     }
 }
