@@ -8,7 +8,7 @@ import java.util.Map;
  *
  * @author Albina Gimaletdinova on 23/06/2022
  */
-public class ConstructTree {
+public class ConstructTreeFromInorder {
     private Map<Integer, Integer> inMap = new HashMap<>();
     private int[] inorder;
     private int[] postorder;
