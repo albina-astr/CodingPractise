@@ -6,7 +6,7 @@ import java.util.Comparator;
 /**
  * https://leetcode.com/problems/largest-number/
  *
- * @author Albina Gimaletdinova on 06/07/2022
+ * @author Albina Gimaletdinova on 14/07/2022
  */
 public class LargestNumber {
     private class LargestStringComparator
