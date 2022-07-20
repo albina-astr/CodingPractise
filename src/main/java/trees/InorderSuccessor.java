@@ -9,6 +9,7 @@ import java.util.List;
  * @author Albina Gimaletdinova on 19/07/2022
  */
 public class InorderSuccessor {
+    //solution 1
     List<TreeNode> all = new ArrayList<>();
 
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
@@ -32,5 +33,37 @@ public class InorderSuccessor {
         inorder(root.left);
         all.add(root);
         inorder(root.right);
+    }
+
+    //solution 2
+    private TreeNode prev = null;
+    private TreeNode res = null;
+
+    public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
+        if (root == null) {
+            return null;
+        }
+
+        if (p.right != null) {
+            TreeNode leftmost = p.right;
+            while (leftmost.left != null) {
+                leftmost = leftmost.left;
+            }
+            return leftmost;
+        }
+        inorder(root, p);
+        return res;
+    }
+
+    private void inorder(TreeNode root, TreeNode p) {
+        if (root == null) return;
+
+        inorder(root.left, p);
+        if (prev == p && res == null) {
+            res = root;
+            return;
+        }
+        prev = root;
+        inorder(root.right, p);
     }
 }
