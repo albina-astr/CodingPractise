@@ -21,4 +21,21 @@ public class MinSubArrayLen {
         }
         return minLen == Integer.MAX_VALUE ? 0 : minLen;
     }
+
+    //solution 2 - better
+    public int minSubArrayLen2(int target, int[] arr) {
+        int resLen = Integer.MAX_VALUE;
+
+        int windowStart = 0;
+        int windowSum = 0;
+        for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+            windowSum += arr[windowEnd];
+            while (windowSum >= target) {
+                resLen = Math.min(resLen, windowEnd - windowStart + 1);
+                windowSum -= arr[windowStart];
+                windowStart++;
+            }
+        }
+        return resLen == Integer.MAX_VALUE ? 0 : resLen;
+    }
 }
