@@ -48,6 +48,27 @@ public class IsValidBST {
          long to = data.to;
          return node.val > from && node.val < to;
      }
+
+    // SOLUTION 3
+     public boolean isValidBST3(TreeNode root) {
+         return inorder(root);
+     }
+
+     private Integer prev = null;
+     private boolean inorder(TreeNode root) {
+         if (root == null) return true;
+
+         if (!inorder(root.left)) {
+             return false;
+         }
+         if (prev != null && root.val <= prev) {
+             return false;
+         }
+
+         prev = root.val;
+
+         return inorder(root.right);
+     }
 }
 
 class NodeData {
