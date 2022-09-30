@@ -8,7 +8,7 @@ import java.util.Deque;
  *
  * @author Albina Gimaletdinova on 27/09/2022
  */
-public class IsValidBST {
+public class ValidBST {
     public boolean isValidBST(TreeNode root) {
         return isBst(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
