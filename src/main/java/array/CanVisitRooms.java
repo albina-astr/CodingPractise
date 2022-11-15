@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * https://leetcode.com/problems/keys-and-rooms/
  *
- * @author Albina Gimaletdinova on 28/02/2023
+ * @author Albina Gimaletdinova on 10/11/2022
  */
 public class CanVisitRooms {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
