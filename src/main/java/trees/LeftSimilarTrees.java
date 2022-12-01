@@ -1,5 +1,8 @@
 package trees;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * https://leetcode.com/problems/leaf-similar-trees/
  *
